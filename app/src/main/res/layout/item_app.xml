@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp"
+    android:layout_marginBottom="48dp"
+    android:clickable="true"
+    app:cardBackgroundColor="@android:color/transparent"
+    android:foreground="?attr/selectableItemBackground"
+    android:gravity="center"
+    android:padding="10dp"
+    android:stateListAnimator="@animator/animation"
+    android:theme="@style/Item"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true"
+    tools:ignore="SpeakableTextPresentCheck">
+
+    <RelativeLayout
+        android:id="@+id/ivContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivIcon"
+            android:layout_width="160dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/launchy_banner"
+            tools:ignore="ContentDescription" />
+
+        <RelativeLayout
+            android:id="@+id/ivFavorite"
+            android:layout_width="160dp"
+            android:layout_height="90dp"
+            android:background="@drawable/blacktransparentbg_medium">
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:src="@drawable/checkmark"
+                tools:ignore="ContentDescription" />
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

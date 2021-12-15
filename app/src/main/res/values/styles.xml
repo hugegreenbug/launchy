@@ -1,0 +1,54 @@
+<resources>
+    <style name="Theme.TvPartyLauncher" parent="@style/Theme.AppCompat.Leanback">
+        <item name="android:windowBackground">@drawable/blacktransparentbg_light</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowShowWallpaper">true</item>
+        <item name="android:windowActivityTransitions">true</item>
+    </style>
+    <style name="Theme.UnsplashList" parent="@style/Theme.AppCompat.Leanback">
+        <item name="android:windowBackground">@drawable/blackbg</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowShowWallpaper">false</item>
+        <item name="android:windowActivityTransitions">true</item>
+    </style>
+    <style name="Item" parent="@style/Theme.AppCompat">
+        <item name="colorControlHighlight">@color/transparentWhite2</item>
+    </style>
+    <style name="ItemUnsplash" parent="@style/Theme.AppCompat">
+        <item name="colorControlHighlight">@color/transparentWhite2</item>
+    </style>
+    <style name="TitleBackground">
+        <item name="android:background">@color/transparentBlack</item>
+    </style>
+    <style name="FavoriteLabel">
+        <item name="android:color">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@android:color/holo_red_light</item>
+    </style>
+    <style name="NormalLabel">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:color">@android:color/white</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:background">?android:attr/listDivider</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+    </style>
+    <style name="Title">
+        <item name="android:textColor">#FFFFFFFF</item>
+    </style>
+    <style name="SettingsButton">
+        <item name="android:colorControlHighlight">#B4FFFFFF</item>
+    </style>
+</resources>

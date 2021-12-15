@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.hugegreenbug.launchy"
+    android:versionCode="8"
+    android:versionName="1.0.5">
+
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS" />
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:banner="@mipmap/launchy_banner"
+        android:icon="@mipmap/launchy_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/launchy_icon_round"
+        android:supportsRtl="true"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity
+            android:name="com.hugegreenbug.launchy.UnsplashWebview"
+            android:theme="@style/Theme.TvPartyLauncher"
+            android:launchMode="singleTask"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            >
+        </activity>
+        <activity
+            android:name="com.hugegreenbug.launchy.UnsplashActivity"
+            android:theme="@style/Theme.UnsplashList"
+            android:launchMode="singleTask"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            >
+        </activity>
+        <activity android:name=".OnboardingActivity"
+            android:enabled="true"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:theme="@style/Theme.Leanback.Onboarding" />
+        <activity
+            android:name="com.hugegreenbug.launchy.MainActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:stateNotNeeded="true"
+            android:theme="@style/Theme.TvPartyLauncher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER_APP" />
+                <category android:name="android.intent.category.LEANBACK" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.MONKEY" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

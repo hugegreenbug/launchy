@@ -1,0 +1,39 @@
+<resources>
+    <!-- Background Preference -->
+    <string-array name="background_entries">
+        <item>Black</item>
+        <item>Dark Grey</item>
+        <item>Unsplash Nature</item>
+        <item>Unsplash Animals</item>
+        <item>Unsplash Textures</item>
+        <item>Unsplash Drone Captures</item>
+        <item>Unsplash Wallpapers</item>
+        <item>Unsplash Editorial</item>
+    </string-array>
+
+    <string-array name="background_values">
+        <item>Black</item>
+        <item>DarkGrey</item>
+        <item>UnsplashNature</item>
+        <item>UnsplashAnimals</item>
+        <item>UnsplashTextures</item>
+        <item>UnsplashDroneCaptures</item>
+        <item>UnsplashWallpapers</item>
+        <item>UnsplashEditorial</item>
+    </string-array>
+
+    <!-- Background Dim Preference -->
+    <string-array name="background_dim_entries">
+        <item>None</item>
+        <item>Light</item>
+        <item>Medium</item>
+        <item>Dark</item>
+    </string-array>
+
+    <string-array name="background_dim_values">
+        <item>None</item>
+        <item>Light</item>
+        <item>Medium</item>
+        <item>Dark</item>
+    </string-array>
+</resources>

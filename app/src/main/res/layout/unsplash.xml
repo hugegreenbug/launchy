@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:id="@+id/unsplashContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10sp"
+        android:paddingTop="6sp"
+        android:paddingRight="10sp"
+        android:paddingBottom="2sp"
+        android:textSize="30sp"
+        android:theme="@style/Title"
+        android:layout_alignParentStart="true" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/wallpaperList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:layout_below="@+id/title"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="8sp"
+        android:layout_marginRight="10sp"
+        android:layout_marginBottom="4sp"
+        android:clipToPadding="false"
+        android:fadeScrollbars="true"
+        android:overScrollMode="ifContentScrolls"
+        android:padding="24sp"
+        android:scrollbarSize="5sp"
+        android:scrollbars="vertical"/>
+
+</RelativeLayout>

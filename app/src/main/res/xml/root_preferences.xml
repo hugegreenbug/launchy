@@ -1,0 +1,28 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:iconSpaceReserved="false"
+    app:singleLineTitle="true"
+    app:title="Launcher Settings">
+    <Preference
+        android:title="@string/android_settings_title"
+        android:key="@string/android_settings"
+        android:icon="@drawable/settings"
+        android:summary="@string/android_settings_summary" />
+    <ListPreference
+        android:entries="@array/background_entries"
+        android:entryValues="@array/background_values"
+        android:key="@string/pref_background"
+        android:persistent="false"
+        android:icon="@drawable/wallpaper"
+        android:title="@string/background_title"
+        />
+    <ListPreference
+        android:defaultValue="Light"
+        android:entries="@array/background_dim_entries"
+        android:entryValues="@array/background_dim_values"
+        android:key="@string/pref_dim_background"
+        android:icon="@drawable/background_dim"
+        android:title="@string/background_dim_title"
+        />
+</PreferenceScreen>

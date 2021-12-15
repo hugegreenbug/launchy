@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/launcher"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/Theme.UnsplashList"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="12dp"
+        android:gravity="fill_vertical"
+        android:id="@+id/header">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textSize="30sp"
+            android:theme="@style/Title"
+            android:layout_marginStart="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_toStartOf="@id/progressBar_cyclic" />
+        <ProgressBar
+            android:id="@+id/progressBar_cyclic"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="44dp"
+            android:paddingTop="6dp"
+            android:indeterminateTint="#00796B"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+    <View
+        style="@style/Divider"
+        android:id="@+id/divider"/>
+
+    <LinearLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center|center_horizontal|fill_horizontal|fill_vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/loading"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:gravity="center"/>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/wallList"
+        android:layout_width="match_parent"
+        android:layout_height="390dp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="2dp"
+        android:clipToPadding="false"
+        android:fadeScrollbars="true"
+        android:paddingEnd="14dp"
+        android:paddingStart="14dp"
+        android:scrollbarSize="5dp"
+        android:scrollbars="vertical"
+        android:focusedByDefault="true"
+        android:drawSelectorOnTop="true"
+        android:overScrollMode="always">
+    </androidx.recyclerview.widget.RecyclerView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginStart="82dp"
+        android:layout_marginEnd="78dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="12dp"
+        style="?android:attr/buttonBarStyle" >
+
+        <Button
+            android:id="@+id/previousPage"
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"
+            android:text="@string/previous"
+            android:gravity="center"
+            android:visibility="invisible"
+            android:textColor="#00796B"
+            android:textSize="20sp"
+            android:padding="12dp"
+            style="?android:attr/buttonBarButtonStyle"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:layout_alignParentStart="true"/>
+
+        <Button
+            android:id="@+id/nextPage"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="5dp"
+            android:gravity="center"
+            android:visibility="invisible"
+            android:textSize="20sp"
+            android:padding="12dp"
+            android:text="@string/next"
+            android:textColor="#00796B"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </RelativeLayout>
+</LinearLayout>

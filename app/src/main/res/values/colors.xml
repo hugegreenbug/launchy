@@ -1,0 +1,13 @@
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="dark_grey">#FF3f3f3f</color>
+    <color name="transparentBlack">#B4000000</color>
+    <color name="transparentWhite">#4bffffff</color>
+    <color name="transparentWhite2">#20ffffff</color>
+    <color name="transparentGrey">#783f3f3f</color>
+    <color name="transparentGreen">#4038ff63</color>
+    <color name="green">#FF1b7f0d</color>
+    <color name="icon_background">#4A4F51</color>
+    <color name="icon_alt_background">#2A2F51</color>
+    <color name="fastlane_background">#FF171717</color>
+</resources>

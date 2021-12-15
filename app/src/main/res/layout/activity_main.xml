@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/launcher"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/Theme.TvPartyLauncher"
+    android:background="@drawable/transparentbg"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/header_container">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingStart="66dp"
+            android:paddingTop="14dp"
+            android:paddingEnd="66dp"
+            android:paddingBottom="14dp"
+            android:gravity="center"
+            android:id="@+id/header">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="30sp"
+                android:theme="@style/Title"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_toStartOf="@+id/androidSettings" />
+
+            <ImageView
+                android:id="@+id/androidSettings"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="12dp"
+                android:layout_centerInParent="true"
+                android:layout_toStartOf="@id/textClock"
+                android:theme="@style/SettingsButton"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="@string/settings"
+                android:focusable="true"
+                android:focusedByDefault="false"
+                android:visibility="invisible"
+                android:src="@drawable/settings"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+            <TextClock
+                android:id="@+id/textClock"
+                android:layout_width="150dp"
+                android:layout_height="42dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:gravity="end"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="30sp" />
+        </RelativeLayout>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/appList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header_container"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="4dp"
+        android:clipToPadding="false"
+        android:fadeScrollbars="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:paddingTop="10dp"
+        android:paddingBottom="24dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:scrollbars="vertical"
+        android:scrollbarSize="3dp">
+    </androidx.recyclerview.widget.RecyclerView>
+    <RelativeLayout
+        android:id="@+id/settings"
+        android:layout_width="400dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:focusedByDefault="false"
+        tools:ignore="SpeakableTextPresentCheck"/>
+</RelativeLayout>

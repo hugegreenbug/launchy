@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Launchy Launcher</string>
+    <string name="all_apps">Applications</string>
+    <string name="favorites">Favorites</string>
+    <string name="pref_background">background</string>
+    <string name="pref_nature">nature</string>
+    <string name="pref_dim_background">background_dim</string>
+    <string name="backgrounds_header">Backgrounds</string>
+    <string name="background_title">Choose A Background</string>
+    <string name="background_dim_title">Background Dim</string>
+    <string name="launcher_preferences">Launcher Preferences</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="settings">Settings</string>
+    <string name="android_settings">android_settings</string>
+    <string name="android_settings_title">Android Settings</string>
+    <string name="android_settings_summary">Starts Android Settings</string>
+    <string name="alert">Alert</string>
+    <string name="nowalls">No images found</string>
+    <string name="retry">Retry This Page</string>
+    <string name="last">Retry Previous Page</string>
+    <string name="cancel">Cancel</string>
+    <string name="loading">Loading ...</string>
+
+    <!-- Strings related to onboarding -->
+    <string name="onboarding_title_welcome">Welcome to Launchy Launcher</string>
+    <string name="onboarding_title_favorites">Favorites</string>
+    <string name="onboarding_title_applications">Applications</string>
+    <string name="onboarding_title_settings">Settings</string>
+
+    <string name="onboarding_description_welcome">Thanks for installing Launchy Launcher.</string>
+    <string name="onboarding_description_favorites">Favorites are displayed after starting Launchy. All of your TV apps were added to the favorites.</string>
+    <string name="onboarding_description_applications">Switch between favorites and all apps by pressing the back button. Long press on an app icon to add/remove it from your favorites list.</string>
+    <string name="onboarding_description_settings">The gear icon will open the settings menu. In Launchy\'s settings, you can start Android settings and change your background.</string>
+
+    <string name="wallpaper_error">Error getting wallpaper</string>
+    <string name="downloading_wallpaper">Downloading wallpaper</string>
+    <string name="set_wallpaper">Setting wallpaper</string>
+    <string name="select_wallpaper">Click to see the user\'s profile. Long click to set the wallpaper.</string>
+</resources>

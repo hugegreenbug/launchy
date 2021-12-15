@@ -1,0 +1,63 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    signingConfigs {
+        'default' {
+            storeFile file('/Users/hugh/Documents/androidkeystore/Keystore')
+        }
+    }
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.hugegreenbug.launchy"
+        minSdk 26
+        targetSdk 31
+        versionCode 8
+        versionName "1.0.5"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation("androidx.leanback:leanback:1.2.0-alpha01")
+    // leanback-preference is an add-on that provides a settings UI for TV apps.
+    implementation("androidx.leanback:leanback-preference:1.2.0-alpha01")
+
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'androidx.appcompat:appcompat-resources:1.3.1'
+    implementation "androidx.room:room-runtime:2.3.0"
+    implementation "com.anggrayudi:storage:0.13.0"
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    implementation 'androidx.preference:preference:1.1.1'
+    implementation 'com.beust:klaxon:5.5'
+
+    kapt "androidx.room:room-compiler:2.3.0"
+
+}
