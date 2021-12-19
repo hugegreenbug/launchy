@@ -16,6 +16,7 @@ class OnboardingFragment : OnboardingSupportFragment() {
         R.drawable.page3
     )
     private var mContentView: ImageView? = null
+    private val mMaxPages = 3
 
     @Nullable
     override fun onCreateView(
@@ -58,10 +59,8 @@ class OnboardingFragment : OnboardingSupportFragment() {
         mContentView = ImageView(activity)
         mContentView!!.scaleType = ImageView.ScaleType.CENTER
         mContentView!!.setPadding(0, 32, 0, 32)
-        mContentView!!.setImageDrawable(ResourcesCompat.getDrawable(
-            resources,
-            R.drawable.launchy_welcome,
-            null))
+        setFirstPage()
+
         return mContentView
     }
 
@@ -70,7 +69,18 @@ class OnboardingFragment : OnboardingSupportFragment() {
         return null
     }
 
+    fun setFirstPage() {
+        mContentView!!.setImageDrawable(ResourcesCompat.getDrawable(
+            resources,
+            R.drawable.launchy_welcome,
+            null))
+    }
     override fun onPageChanged(newPage: Int, previousPage: Int) {
+        if (newPage < 1 || newPage > mMaxPages) {
+            setFirstPage()
+            return
+        }
+
         mContentView!!.setImageDrawable(
             ResourcesCompat.getDrawable(
             resources,
