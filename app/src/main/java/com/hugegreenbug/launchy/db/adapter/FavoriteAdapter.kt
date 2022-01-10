@@ -44,12 +44,10 @@ class FavoriteAdapter(private val appManager: AppManager, private var list: List
                 return@setOnClickListener
             }
 
-            val banner = appManager.getAppIcon(app.componentInfo)
-            if (banner != null) {
-                val bannerBmap = BitmapUtils.toBitmap(banner)
-                val roundedBanner = getRoundedCornerBitmap(bannerBmap)
-                ivIcon.setImageBitmap(roundedBanner)
-            }
+            val banner = appManager.getAppIcon(app.packageItemInfo)
+            val bannerBmap = BitmapUtils.toBitmap(banner)
+            val roundedBanner = getRoundedCornerBitmap(bannerBmap)
+            ivIcon.setImageBitmap(roundedBanner)
             if (app.favorite) {
                 ivFav.visibility = View.VISIBLE
             } else {
