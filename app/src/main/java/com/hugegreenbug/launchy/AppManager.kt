@@ -3,7 +3,8 @@ package com.hugegreenbug.launchy
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
-import android.content.pm.ComponentInfo
+import android.content.pm.ApplicationInfo
+import android.content.pm.PackageItemInfo
 import android.content.pm.PackageManager.MATCH_ALL
 import android.graphics.drawable.Drawable
 import android.util.ArrayMap
@@ -17,38 +18,34 @@ class AppManager(private val context: Context) {
     fun getLaunchableApps(): List<App> {
         val intent = Intent(Intent.ACTION_MAIN, null)
         intent.addCategory(Intent.CATEGORY_LEANBACK_LAUNCHER)
-        var list = packageManager.queryIntentActivities(intent, MATCH_ALL)
-            .map { it.activityInfo }
-            .map { App(it.packageName, it.loadLabel(packageManager).toString(), it, false) }
-        val listIter = list.iterator()
-        while (listIter.hasNext()) {
-            val app = listIter.next()
-            val drawable = getAppIcon(app.componentInfo)
-            if (drawable == null) {
-                list = list.filterIndexed { _, element ->
-                    element.packageName != app.packageName
-                }
-            }
-        }
+
+        val list = ( getAppsThroughPackages() + getAppsThroughIntent(intent) )
+            .distinctBy { it.packageName }
+            .sortedBy { it.label }
 
         return list
     }
 
+    private fun getAppsThroughIntent(intent: Intent) =
+        packageManager.queryIntentActivities(intent, MATCH_ALL)
+            .map { it.activityInfo }
+            .map { App(it.packageName, it.loadLabel(packageManager).toString(), it, false) }
+
+    private fun getAppsThroughPackages() = packageManager.getInstalledPackages(0)
+        .filter { (it.applicationInfo.flags and ApplicationInfo.FLAG_SYSTEM) == 0 }
+        .map { it.applicationInfo }
+        .map { App(it.packageName, it.loadLabel(packageManager).toString(), it, false) }
+
     fun startApp(app: App) {
-        val intent = packageManager.getLeanbackLaunchIntentForPackage(app.packageName)
+        val intent = packageManager.getLeanbackLaunchIntentForPackage(app.packageName) ?:
+            packageManager.getLaunchIntentForPackage(app.packageName)
         context.startActivity(intent)
     }
 
-    fun getAppIcon(componentInfo: ComponentInfo): Drawable?
-            = appIconCache[componentInfo.packageName] ?: loadAppIcon(componentInfo)
+    fun getAppIcon(info: PackageItemInfo): Drawable
+            = appIconCache[info.packageName] ?: loadAppIcon(info)
 
-    private fun loadAppIcon(componentInfo: ComponentInfo): Drawable? {
-        return try {
-            val drawable = componentInfo.loadBanner(packageManager) ?: return null
-
-            drawable
-        } catch (e: SecurityException) {
-            null
-        }
+    private fun loadAppIcon(info: PackageItemInfo): Drawable {
+        return info.loadBanner(packageManager) ?: info.loadIcon(packageManager)
     }
 }
